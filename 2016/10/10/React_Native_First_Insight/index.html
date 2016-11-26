@@ -1,0 +1,702 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="写在最前这篇文章是一次session的总结， 请结合配套PPT，否则有些内容可能无从找起。
+React Native的起源早在2011年，Facebook一位员工 Jordan Walke 因不满市面上的JavaScript MVC架构，决定和团队一起重新开发一套，于是React就诞生了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React Native 初探">
+<meta property="og:url" content="https://hbwang85.github.io/2016/10/10/React_Native_First_Insight/index.html">
+<meta property="og:site_name" content="Think Then Do IT">
+<meta property="og:description" content="写在最前这篇文章是一次session的总结， 请结合配套PPT，否则有些内容可能无从找起。
+React Native的起源早在2011年，Facebook一位员工 Jordan Walke 因不满市面上的JavaScript MVC架构，决定和团队一起重新开发一套，于是React就诞生了。">
+<meta property="og:updated_time" content="2016-10-10T15:51:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React Native 初探">
+<meta name="twitter:description" content="写在最前这篇文章是一次session的总结， 请结合配套PPT，否则有些内容可能无从找起。
+React Native的起源早在2011年，Facebook一位员工 Jordan Walke 因不满市面上的JavaScript MVC架构，决定和团队一起重新开发一套，于是React就诞生了。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> React Native 初探 | Think Then Do IT </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  <div class="container one-collumn  page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Think Then Do IT</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                React Native 初探
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-10-10T23:51:49+08:00" content="2016-10-10">
+              2016-10-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/React-Native/" itemprop="url" rel="index">
+                    <span itemprop="name">React Native</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/10/React_Native_First_Insight/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/10/React_Native_First_Insight/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="写在最前"><a href="#写在最前" class="headerlink" title="写在最前"></a>写在最前</h2><p>这篇文章是一次session的总结， 请结合<a href="https://pan.baidu.com/s/1bpMbeij" target="_blank" rel="external">配套PPT</a>，否则有些内容可能无从找起。</p>
+<h2 id="React-Native的起源"><a href="#React-Native的起源" class="headerlink" title="React Native的起源"></a>React Native的起源</h2><p>早在2011年，Facebook一位员工 <code>Jordan Walke</code> 因不满市面上的JavaScript MVC架构，决定和团队一起重新开发一套，于是React就诞生了。</p>
+<a id="more"></a>
+<p>2012年React被用在了Instagram项目。Facebook内部团队认为其非常优秀，并在2013年将其开源。</p>
+<p>由于React的设计思想及其独特，性能出众，越来越多的人开始关注和使用。随着React滚雪球似的发展，Facebook团队意识到的它的强大，认为可以“Learn once, write anywhere”, 并提出了将React用于mobile native开发的框架，这就是<strong>React Native</strong>.</p>
+<p>React Native 到底有多火呢？我们可以通过<code>Github star</code>的数目窥见一斑。并且几乎每天都有pull request 被merge。</p>
+<p>那目前React Native 都有哪些应用已经使用了呢？从图我们可以看出目前有相当多的应用已经开始使用这一优秀的架构。需要说明的是由于React Native 尚处于起步阶段，多数App处于尝试阶段，据我所知，目前除了Facebook的三款应用使用纯React Native开发，其他的App大多只是部分功能模块使用React Native开发。</p>
+<p>##React Native的优势和不足<br>由于React Native 处于Hybrid和Native之间，要评价React Native，我们需要将其分别于Hybrid 和 Native 进行比较。我们首先说一下它的优势。</p>
+<h3 id="React-Native-优势"><a href="#React-Native-优势" class="headerlink" title="React Native 优势"></a>React Native 优势</h3><ul>
+<li>RN和Native相比，它可以<strong>Learn once， write anywhere</strong>，只要掌握了React，开发者就可以分别进行Web开发以及mobile 开发。</li>
+<li><strong>RN支持跨平台开发</strong>，RN工程中可以复用大量的逻辑处理和UI控件，只需要对个别不可复用的平台针对性强的UI控件做特别处理就可以实现一个工程既可以运行在iPhone设备上也可以运行在Android设备上。</li>
+<li><strong>支持热更新（Hot Code Push）</strong>。相对iOS不太成熟的热更新，这无疑是一把利剑。App不再需要漫长的App Store审核。</li>
+<li>RN和Hybrid相比，由于<strong>RN完全使用Native的UI控件进行渲染</strong>，因此RN可以实现Native的各种动画效果，而且性能也更接近于Native。</li>
+</ul>
+<h3 id="React-Native-不足"><a href="#React-Native-不足" class="headerlink" title="React Native 不足"></a>React Native 不足</h3><ul>
+<li>首先我想说的是RN的学习曲线。由于我是纯Native开发，不懂Web开发。刚开始学习时感觉要学很多的东西，JavaScript，React， Redux， CSS等。因此个人认为开始时<strong>学习曲线是比较陡峭的</strong>。当然如果懂前端开发，相信这些都是不在话下的。  </li>
+<li><strong>API不稳定</strong>。RN现在的版本为0.30. 并且每1~2周都会有一个release。这给开发者带来的痛苦不言而喻。</li>
+<li><strong>文档不完善</strong>。官网上资源非常有限，对API的介绍也都非常的浅显。</li>
+<li><strong>对Android的支持滞后</strong>。React Native从去年12月才开始支持Android，相对晚一些。</li>
+</ul>
+<h2 id="工程讲解"><a href="#工程讲解" class="headerlink" title="工程讲解"></a>工程讲解</h2><p>在开始之前，我们可以先看一下RN的性能。这个视频录制的是RN官方的一个Demo。我们重点看“ListView”部分。因为这个控件是最常用的，也是最容易引起重用等性能问题的。从视频中我们可以看到性能还是非常优秀的。  </p>
+<h3 id="工程文件结构"><a href="#工程文件结构" class="headerlink" title="工程文件结构"></a>工程文件结构</h3><p>首先我们来说一下工程的文件结构。从上至下依次有:  </p>
+<ul>
+<li>android文件夹： 这个是自动生成的Android原生工程。</li>
+<li>ios文件夹： 这个是自动生成的iOS原生工程。需要注意的是这两个原生工程我们基本上是不需要做任何修改的。那么它们存在的意义呢？提供App的入口。</li>
+<li>js文件夹：这个是自己定义的文件夹。一般为了分类清晰，我们可以定义Common、App等用来归类我们创建的控件（Component）。</li>
+<li>node_modules: 这个是工程依赖的所有node模块，像react模块，react-native模块都可以在这里找到。</li>
+<li>index.android.js: 这个文件是RN工程Android版入口文件</li>
+<li>index.ios.js: 这个文件的RN工程iOS版入口文件。这两个文件的主要作用就是创建RN的rootComponent，并且将其和自动生成的原生工程绑定。我们通过RN创建的控件都是通过rootComponent实现一级级调用的。</li>
+<li>package.json： 这个是node 模块的版本管理文件</li>
+</ul>
+<h3 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h3><p>我为这次的session做了一个简单的demo，demo基于<code>ES6</code>，页面分两级：第一级是一个<code>listView</code>，按页请求Github的user API并刷新UI，第二级是一个详情页面，展示由上一级传递过来的数据。第一级页面我们主要练习控件的主要生命周期以及<code>state</code>的使用，第二级页面我们主要练习<code>property</code>的使用。首先我们看一下这个Demo的视频以有一个初步的认识。</p>
+<h4 id="index-ios-js"><a href="#index-ios-js" class="headerlink" title="index.ios.js"></a>index.ios.js</h4><ul>
+<li><p>我们刚提到，这个是入口文件，在这个文件里我们需要定义<strong>rootComponent</strong>。首先要说的是react模块以及react-native模块的引用。在我开始学习RN时完全没有概念，到底什么地方应该引用哪个模块，网上sample很多时候又不统一。我们可以从react-native模块的源码入手。从源码中我们可以看到像我们常用的控件Text、View、Navigator等以及StyleSheet等都是在这里的。所以正确的引用应该是<strong>常用的控件引用“react-native”模块</strong>；  </p>
+</li>
+<li><p>关于引用其他自己创建的控件，由于目前生成的导出控件语法<br><code>export default XX</code><br>  所以引用时为<br>  <code>var com = require(‘./js/xx’).default</code></p>
+<p>  当然，如果你采用之前的 <code>export module = xx</code> 就不在需要加 <code>default</code>了</p>
+</li>
+<li>绑定rootComponent和原生工程</li>
+</ul>
+<h4 id="AppDelegate-m"><a href="#AppDelegate-m" class="headerlink" title="AppDelegate.m"></a>AppDelegate.m</h4><p>这个文件是iOS原生工程的入口文件。这里需要注意：  </p>
+<ul>
+<li><strong>jsCodeLocation</strong>： 我们写的JS部分最终生成的路径就是这个url。想具体了解可以从浏览器打开这个url看看具体是什么东东。</li>
+<li><strong>RCTRootView</strong>，这个是rootView，它会承载我们所有的UI控件。通过源代码可以看出<strong>它继承自UIView</strong>。</li>
+<li><strong>RN工程调用顺序</strong>：通过此文件请求JS bundle， 然后将其rootComponent首先加载到RCTRootView，然后通过rootComponent实现其他各个控件的调用执行。</li>
+</ul>
+<h4 id="SearchResults-js"><a href="#SearchResults-js" class="headerlink" title="SearchResults.js"></a>SearchResults.js</h4><p>这个控件主要实现listview分页展示Github user 信息。首先我们需要了解React的两个概念： <code>State</code>和<code>Property</code>。</p>
+<ul>
+<li><strong>State</strong>：其实就是一个<strong>状态机</strong>。通过改变State去出发控件的render方法去重新渲染UI。</li>
+<li><p><strong>Property</strong>： 不可变，主要通过值传递方式获得值。</p>
+</li>
+<li><p>这里我们可以看到我们首先在初始化方法中初始化<code>State</code>。然后在将要加载控件时去请求网络获取数据。需要注意的是<code>componentWillMount</code>在控件的生命周期中只出现一次。另外，可以看到<code>_fetchData</code>方法 是以<code>_</code>开始，这其实是一个私有方法的约定俗称的定义方式。</p>
+</li>
+<li>在“_fetchData”方法中我们看到，当获取到网络数据后，我们改变State的值，以触发UI重新渲染。</li>
+<li>”_selectCell”方法处理cell的点击操作，可以看到，在方法中我们实现了 “push”操作，并且将下一级所需要的值以“property”的方式传递。</li>
+<li><strong>render</strong> 这个方法是生命周期中最重要的方法，也是一个控件不可或缺的方法。</li>
+<li>ListView属性内调用控件方法需要<code>bind(this)</code>,否则会提示错误<code>找不到该方法</code>，也可以通过箭函数实现bind  </li>
+</ul>
+<h4 id="DetailPage-js"><a href="#DetailPage-js" class="headerlink" title="DetailPage.js"></a>DetailPage.js</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">static propTypes = &#123;</div><div class="line">  user: PropTypes.object.isRequired,</div><div class="line">&#125;</div><div class="line">static defaultProps = &#123;</div><div class="line">	user: &#123;</div><div class="line">		id: &apos;defaultID&apos;,</div><div class="line">		score: 5,</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上述代码我们定义了<code>property</code>的条件：是类型为<code>Object</code>并且必须传入的。第二段我们定义的<code>property</code>的初始值，如果<code>property</code>值没有传入，就使用默认值。</p>
+<h3 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h3><p>适用于RN的IDE有Facebook官方的<code>Atom + Nuclide</code>, <code>WebStorm</code>, <code>Sublime</code>等。这里再介绍一款IDE： <a href="https://www.decosoftware.com/" target="_blank" rel="external">Deco</a><br>Deco 支持：   </p>
+<ul>
+<li><strong>创建新的控件</strong> Deco可以创建控件并直接插入所需的代码；</li>
+<li><strong>拖拽插入控件</strong> Deco支持直接将控件拖拽到相应代码位置，自动生成对应代码；</li>
+<li><strong>可视化调整属性</strong> 拖拽的控件在IDE右侧的<code>Property</code>会罗列出多有属性，可以通过调整这里的属性调节控件；</li>
+<li><strong>选择simulator</strong> 可以直接选择要运行的模拟器进行运行；</li>
+</ul>
+<p>当然，由于Deco尚属于初期，还存在一些不足。如：  </p>
+<ul>
+<li>目前只支持iOS；</li>
+<li>支持拖拽的控件有限，Demo中的<code>ListView</code>目前就不支持；</li>
+<li>字体不可调整， 非常小，很多提了这个issue，期望在不久的版本中可以改善。</li>
+</ul>
+<h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><p>在上面介绍的Deco中，我们通过直接拖拽控件，然后控件的所有属性都自动生成并添加到代码中。实际上官方推荐将所有的样式集中到一起，如下代码所示：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">const styles = StyleSheet.create(&#123;</div><div class="line">  container: &#123;</div><div class="line">    flex: 1,</div><div class="line">    justifyContent: &apos;center&apos;,</div><div class="line">    alignItems: &apos;center&apos;,</div><div class="line">    backgroundColor: &apos;#F5FCFF&apos;,</div><div class="line">  &#125;,</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>RN使用类似CSS样式。对于控件的布局主要通过 <code>flexbox</code>， <code>justifyContent</code>和 <code>alignItems</code>三个属性进行控制。</p>
+<h3 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h3><p><a href="https://github.com/hbwang85/RNWorkshop" target="_blank" rel="external">代码在这里</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="https://pan.baidu.com/s/1miATxyS" alt="王海彬 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="https://pan.baidu.com/s/1dEXSaXV" alt="王海彬 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/10/hello-world/" rel="prev" title="Configure Blog with Hexo + Git + Duoshuo">
+                Configure Blog with Hexo + Git + Duoshuo <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/10/React_Native_First_Insight/"
+           data-title="React Native 初探" data-url="https://hbwang85.github.io/2016/10/10/React_Native_First_Insight/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="王海彬" />
+          <p class="site-author-name" itemprop="name">王海彬</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在最前"><span class="nav-number">1.</span> <span class="nav-text">写在最前</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React-Native的起源"><span class="nav-number">2.</span> <span class="nav-text">React Native的起源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#React-Native-优势"><span class="nav-number">2.1.</span> <span class="nav-text">React Native 优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React-Native-不足"><span class="nav-number">2.2.</span> <span class="nav-text">React Native 不足</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工程讲解"><span class="nav-number">3.</span> <span class="nav-text">工程讲解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#工程文件结构"><span class="nav-number">3.1.</span> <span class="nav-text">工程文件结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#核心代码"><span class="nav-number">3.2.</span> <span class="nav-text">核心代码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#index-ios-js"><span class="nav-number">3.2.1.</span> <span class="nav-text">index.ios.js</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AppDelegate-m"><span class="nav-number">3.2.2.</span> <span class="nav-text">AppDelegate.m</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SearchResults-js"><span class="nav-number">3.2.3.</span> <span class="nav-text">SearchResults.js</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DetailPage-js"><span class="nav-number">3.2.4.</span> <span class="nav-text">DetailPage.js</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IDE"><span class="nav-number">3.3.</span> <span class="nav-text">IDE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样式"><span class="nav-number">3.4.</span> <span class="nav-text">样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更多"><span class="nav-number">3.5.</span> <span class="nav-text">更多</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王海彬</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"hbwang85"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
