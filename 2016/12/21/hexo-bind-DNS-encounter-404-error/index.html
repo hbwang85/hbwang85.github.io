@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="dns," />
 
 
 
@@ -84,12 +84,27 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Think Then Do IT">
-<meta property="og:url" content="https://hbwang85.github.io/archives/2016/index.html">
+<meta name="description" content="Every time I post new articles to blog, my dns will be 404 error
+My DNS config is as below:
+After google I found the root cause is every time I deploy, the CNAME file will be deleted.
+This file should">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo bind DNS encounter 404 error">
+<meta property="og:url" content="https://hbwang85.github.io/2016/12/21/hexo-bind-DNS-encounter-404-error/index.html">
 <meta property="og:site_name" content="Think Then Do IT">
+<meta property="og:description" content="Every time I post new articles to blog, my dns will be 404 error
+My DNS config is as below:
+After google I found the root cause is every time I deploy, the CNAME file will be deleted.
+This file should">
+<meta property="og:image" content="https://hbwang85.github.io/img/dnsconfig.png">
+<meta property="og:updated_time" content="2016-12-21T11:00:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Think Then Do IT">
+<meta name="twitter:title" content="hexo bind DNS encounter 404 error">
+<meta name="twitter:description" content="Every time I post new articles to blog, my dns will be 404 error
+My DNS config is as below:
+After google I found the root cause is every time I deploy, the CNAME file will be deleted.
+This file should">
+<meta name="twitter:image" content="https://hbwang85.github.io/img/dnsconfig.png">
 
 
 
@@ -107,7 +122,7 @@
   };
 </script>
 
-  <title> Archive | Think Then Do IT </title>
+  <title> hexo bind DNS encounter 404 error | Think Then Do IT </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
@@ -126,7 +141,7 @@
   
   
 
-  <div class="container one-collumn   page-archive  ">
+  <div class="container one-collumn  page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -204,214 +219,152 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      Um..! 5 posts in total. Keep on posting.
-    </span>
-
+  <div id="posts" class="posts-expand">
     
 
-      
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                hexo bind DNS encounter 404 error
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-12-21T18:50:21+08:00" content="2016-12-21">
+              2016-12-21
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/12/21/hexo-bind-DNS-encounter-404-error/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/21/hexo-bind-DNS-encounter-404-error/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
       
 
       
+        <p>Every time I post new articles to blog, my dns will be <strong>404 error</strong></p>
+<p>My DNS config is as below:<br><img src="img/dnsconfig.png" alt=""></p>
+<p>After google I found the root cause is every time I deploy, the <code>CNAME</code> file will be deleted.</p>
+<p>This file should be under your root path. you can put it in the <code>source</code> folder, then it will be exist for ever.</p>
+
+      
+    </div>
+
+    <div>
+      
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="https://pan.baidu.com/s/1miATxyS" alt="王海彬 WeChat Pay"/>
+          <p>微信打赏</p>
         </div>
       
       
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="https://pan.baidu.com/s/1dEXSaXV" alt="王海彬 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
+    </div>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/dns/" rel="tag">#dns</a>
+          
+        </div>
+      
 
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/12/21/hexo-bind-DNS-encounter-404-error/" itemprop="url">
-              
-                <span itemprop="name">hexo bind DNS encounter 404 error</span>
-              
-            </a>
-        
-      </h1>
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/18/annotation-RequestBody-ResponseBody/" rel="next" title="Annotation RequestBody & ResponseBody">
+                <i class="fa fa-chevron-left"></i> Annotation RequestBody & ResponseBody
+              </a>
+            
+          </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-12-21T18:50:21+08:00"
-              content="2016-12-21" >
-          12-21
-        </time>
-      </div>
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
 
-    </header>
+      
+      
+    </footer>
   </article>
 
 
 
-    
-
+    <div class="post-spread">
       
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/12/18/annotation-RequestBody-ResponseBody/" itemprop="url">
-              
-                <span itemprop="name">Annotation RequestBody & ResponseBody</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-12-18T19:01:29+08:00"
-              content="2016-12-18" >
-          12-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/11/26/Setup-Shortcut-for-Opening-Softwares-on-Windows/" itemprop="url">
-              
-                <span itemprop="name">Setup Shortcut for Opening Softwares on Windows</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-11-26T12:10:42+08:00"
-              content="2016-11-26" >
-          11-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/10/10/hello-world/" itemprop="url">
-              
-                <span itemprop="name">Configure Blog with Hexo + Git + Duoshuo</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-10-10T23:51:49+08:00"
-              content="2016-10-10" >
-          10-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/10/10/React_Native_First_Insight/" itemprop="url">
-              
-                <span itemprop="name">React Native 初探</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-10-10T23:51:49+08:00"
-              content="2016-10-10" >
-          10-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
-
-  
-
+    </div>
+  </div>
 
 
           </div>
@@ -419,6 +372,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/12/21/hexo-bind-DNS-encounter-404-error/"
+           data-title="hexo bind DNS encounter 404 error" data-url="https://hbwang85.github.io/2016/12/21/hexo-bind-DNS-encounter-404-error/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -438,8 +399,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -489,6 +459,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -592,11 +573,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   
